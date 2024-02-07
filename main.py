@@ -6,7 +6,7 @@ import csv
 
 def readdata(filename):
     #open and read csv file for solar zenith angles
-    # #-----Later functionality to select multiple locations for testing
+    #write to csv file programmic data
     datout = []
     with open(filename, newline='') as sonomafile:
         sonread = csv.reader(sonomafile, delimiter=' ', quotechar='|')
