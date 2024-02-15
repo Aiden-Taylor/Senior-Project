@@ -21,7 +21,7 @@ class ADC:
         mcp = adafruit_mcp3xxx.mcp3008.MCP3008(spi, cs)
         chan_list = [adafruit_mcp3xxx.analog_in(mcp, adafruit_mcp3xxx.mcp3008.P0), adafruit_mcp3xxx.analog_in(mcp, adafruit_mcp3xxx.mcp3008.P1)]
 
-    def readVolts():
+    def readVolts(self):
         #get the adc readout
-        adc = chan_list[rd_chan].value
+        adc = self.chan_list[self.rd_chan].value
         return(adc)
