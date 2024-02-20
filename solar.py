@@ -20,12 +20,14 @@ class Solar:
     
     def getAzimuth(self, curr_hour_angle, curr_date):
         #calculate the sun's Azimuth angle
-        curr_hour_angle = math.radians(curr_hour_angle)
+        curr_hour_angle = math.radians(15*curr_hour_angle)
+        
 
-        declination = math.radians(23.45 * math.degrees(math.sin(math.radians((360/365)*(284+curr_date)))))
-        print(math.degrees(declination))
+        declination = math.radians(23.45 * math.sin(math.radians((360/365)*(284+curr_date))))
+        
+        #print(math.degrees(declination))
         elevation = math.asin(math.sin(declination)*math.sin(self.lat) + math.cos(declination)*math.cos(curr_hour_angle)*math.cos(self.lat))
-        print(math.degrees(elevation))
+        #print(math.degrees(elevation))
         Azprime = math.degrees(math.acos(((math.sin(declination)*math.cos(self.lat)) - (math.cos(declination)*math.cos(curr_hour_angle)*math.sin(self.lat))) / math.cos(elevation)))
         if curr_hour_angle > 0:
             azimuth = 360 - Azprime
