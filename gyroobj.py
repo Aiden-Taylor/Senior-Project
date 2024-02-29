@@ -6,14 +6,14 @@ import adafruit_lsm6ds.lsm6dsox
 
 i2c = board.I2C()
 
-class gyro:
+class gyroobj:
 
     def __init__(self):
-        global accelero
-        accelero = adafruit_lsm6ds.lsm6dsox.LSM6DSOX(i2c)
+        
+        self.accelero = adafruit_lsm6ds.lsm6dsox.LSM6DSOX(i2c)
 
-    def getAngle():
+    def getAngle(self):
         #get the accelerometer gyroscopic readout
 
-        angle = accelero.gyro
+        angle = self.accelero.gyro
         return(angle)

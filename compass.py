@@ -8,12 +8,12 @@ i2c = board.I2C()
 
 class compass:
     def __init__(self):
-        global magneto
-        magneto = adafruit_mmc56x3.MMC5603(i2c)
+        
+        self.magneto = adafruit_mmc56x3.MMC5603(i2c)
 
 
-    def getCompass():
+    def getCompass(self):
         #get the magnetometer readout
 
-        orientation = magneto.magnetic
+        orientation = self.magneto.magnetic
         return(orientation)

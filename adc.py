@@ -10,16 +10,14 @@ import adafruit_mcp3xxx.analog_in
 i2c = board.I2C()
 
 class ADC:
-    global rd_chan
-    global chan_list
 
     def __init__(self, channel):
-        rd_chan = channel
+        self.rd_chan = channel
 
         spi = busio.SPI(clock=board.SCK, MISO=board.MISO, MOSI=board.MOSI)
         cs = digitalio.DigitalInOut(board.D5)
         mcp = adafruit_mcp3xxx.mcp3008.MCP3008(spi, cs)
-        chan_list = [adafruit_mcp3xxx.analog_in(mcp, adafruit_mcp3xxx.mcp3008.P0), adafruit_mcp3xxx.analog_in(mcp, adafruit_mcp3xxx.mcp3008.P1)]
+        self.chan_list = [adafruit_mcp3xxx.analog_in(mcp, adafruit_mcp3xxx.mcp3008.P0), adafruit_mcp3xxx.analog_in(mcp, adafruit_mcp3xxx.mcp3008.P1)]
 
     def readVolts(self):
         #get the adc readout

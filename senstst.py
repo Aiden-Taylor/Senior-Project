@@ -1,7 +1,7 @@
-import gyro
+import gyroobj
 import compass
 
-lsm = gyro()
+lsm = gyroobj()
 mmc = compass()
 
 while True:
