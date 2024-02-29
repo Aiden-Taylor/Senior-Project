@@ -15,5 +15,7 @@ class gyroobj:
     def getAngle(self):
         #get the accelerometer gyroscopic readout
 
-        angle = self.accelero.gyro
+
+        ###### NEED TO DO CALCULATION TO GET ANGLE FROM GRAVITY VECTOR
+        angle = self.accelero.acceleration
         return(angle)
