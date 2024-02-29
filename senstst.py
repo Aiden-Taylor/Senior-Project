@@ -1,8 +1,8 @@
 import gyroobj
 import compass
 
-lsm = gyroobj()
-mmc = compass()
+lsm = gyroobj.gyroobj()
+mmc = compass.compass()
 
 while True:
     print(lsm.getAngle())
