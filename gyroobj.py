@@ -30,5 +30,4 @@ class gyroobj:
     def getCurrAzimuth(self, north):
 
         self.azim = north + self.getHillAngle()*math.sin(self.getCurrAngle())
-        angle = self.accelero.acceleration
-        return(angle)
+        return(self.azim)
