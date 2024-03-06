@@ -18,7 +18,7 @@ def readdata(filename):
 
 
 
-#print(readdata('Sonoma_Irradiance_data.csv'))
+print(readdata('Sonoma_Irradiance_data.csv'))
 
 test = solar.Solar(37.76, 8)
 print(test.getAzimuth(-4, 280))
