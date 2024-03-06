@@ -27,8 +27,8 @@ class gyroobj:
         self.theta = math.asin(math.atan(y/x)/self.getHillAngle())
         return(self.theta)
 
-    def getCurrAzimuth(self):
+    def getCurrAzimuth(self, north):
 
-        
+        self.azim = north + self.getHillAngle()*math.sin(self.getCurrAngle())
         angle = self.accelero.acceleration
         return(angle)

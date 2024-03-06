@@ -17,3 +17,7 @@ class compass:
 
         orientation = self.magneto.magnetic
         return(orientation)
+    
+    def getNorth(self):
+        #should return your angle off of north
+        return('fuck, you should probably write this code at some point')
