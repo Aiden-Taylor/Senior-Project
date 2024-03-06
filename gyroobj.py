@@ -18,6 +18,8 @@ class gyroobj:
 
         x, y, z = self.accelero.acceleration
         self.zenith = math.degrees(math.atan(y/x))
+        # -- Below formula is from a derivation in Aiden's SP Notebook, with
+        # -- MatLab used to solve it for phi.
         #1/(1/(atan(z/(x^2 + y^2)^(1/2))^2 + atan(y/x)^2))^(1/2)
         self.elevation = 90 - math.degrees(1/math.sqrt(1/(pow(math.atan(z/(math.sqrt(pow(x,2) + pow(y,2)))), 2) + pow(math.atan(y/x), 2))))
         return(self.elevation)
