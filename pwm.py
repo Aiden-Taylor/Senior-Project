@@ -18,15 +18,15 @@ class pwm:
 
     def set_speed(self, spd):
         if spd > 0:
-            GPIO.OUT(board.D7, 1)
-            GPIO.OUT(board.D8, 0)
+            GPIO.OUT(board.D7, GPIO.HIGH)
+            GPIO.OUT(board.D8, GPIO.LOW)
 
             self.act_fwd.duty_cycle = spd
             self.act_rev.duty_cycle = 0
 
         else:
-            GPIO.OUT(board.D7, 0)
-            GPIO.OUT(board.D8, 1)
+            GPIO.OUT(board.D7, GPIO.LOW)
+            GPIO.OUT(board.D8, GPIO.HIGH)
 
             self.act_fwd.duty_cycle = 0
             self.act_rev.duty_cycle = -spd
