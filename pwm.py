@@ -30,3 +30,7 @@ class pwm:
 
             self.act_fwd.duty_cycle = 0
             self.act_rev.duty_cycle = -spd
+
+    def stop(self):
+        self.act_fwd.duty_cycle = 0
+        self.act_rev.duty_cycle = 0
