@@ -14,6 +14,6 @@ class pcontroller:
         #saturation
         if effort > 100:
             effort = 100
-        else if effort < -100:
+        elif effort < -100:
             effort = -100
         return(effort)

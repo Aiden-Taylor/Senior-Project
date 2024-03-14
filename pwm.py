@@ -3,8 +3,6 @@ import pwmio
 import RPi.GPIO as GPIO
 
 
-
-
 class pwm:
     
     def __init__(self):
