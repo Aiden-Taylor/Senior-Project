@@ -23,7 +23,7 @@ while True:
         print()
         print("Hill Angle: ")
         print(lsm.getHillAngle())
-        print()
+        print('--------------------------------------')
         time.sleep(2)
     except KeyboardInterrupt:
         break
