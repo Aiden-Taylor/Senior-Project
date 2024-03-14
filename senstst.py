@@ -18,8 +18,10 @@ while True:
         print("Magnetometer Output:")
         print("X:{0:10.2f}, Y:{1:10.2f}, Z:{2:10.2f}".format(mag_x, mag_y, mag_z))
         print()
-        print("Orientation to North: " + str(lsm.getCurrAzimuth(25)))
-        print("Hill Angle: " + str(lsm.getHillAngle))
+        nth = lsm.getCurrAzimuth(25)
+        print("Orientation to North: " + str(nth))
+        ha = lsm.getHillAngle
+        print("Hill Angle: " + str(ha))
         time.sleep(1)
     except KeyboardInterrupt:
         break
