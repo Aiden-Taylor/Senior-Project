@@ -3,7 +3,6 @@ import solar
 import math
 
 
-
 def readdata(filename):
     #open and read csv file for solar zenith angles
     #write to csv file programmic data
