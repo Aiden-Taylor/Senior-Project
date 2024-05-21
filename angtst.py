@@ -12,6 +12,7 @@ while True:
         
         ang = int(input("Give me an angle"))
         run = True
+    
         while run:
             angact = gyro.getFlatAngle()
             
@@ -19,11 +20,12 @@ while True:
             
             
             print(tol)
-            if abs(tol) < 2:
+            if (abs(tol) < 1):
                 run = False
                 act.set_speed(0)
+                
             else:
-                if ang<angact:
+                if tol > 0:
                     print('fuck')
                     act.set_speed(-100)
                 else:
