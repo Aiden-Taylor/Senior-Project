@@ -15,7 +15,7 @@ class ADC:
         self.rd_chan = channel
 
         spi = busio.SPI(clock=board.SCK, MISO=board.MISO, MOSI=board.MOSI)
-        cs = digitalio.DigitalInOut(board.D5)
+        cs = digitalio.DigitalInOut(board.D22)
         mcp = adafruit_mcp3xxx.mcp3008.MCP3008(spi, cs)
         self.chan_list = [adafruit_mcp3xxx.analog_in(mcp, adafruit_mcp3xxx.mcp3008.P0), adafruit_mcp3xxx.analog_in(mcp, adafruit_mcp3xxx.mcp3008.P1)]
 
