@@ -17,4 +17,5 @@ class ADC:
     def readVolts(self):
         #get the adc readout
         adc = self.mcp.read_adc(self.rd_chan)
+        adc = '| {0:>4} | {1:>4} | {2:>4} | {3:>4} | {4:>4} | {5:>4} | {6:>4} | {7:>4} |'.format(*adc)
         return(adc)
