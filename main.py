@@ -7,4 +7,4 @@ import math
 
 override = adc.ADC(1)
 while True:
-    print(override.readVolts)
+    print(override.readVolts())
