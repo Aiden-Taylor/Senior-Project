@@ -21,8 +21,11 @@ class Solar:
     def getAzimuth(self, timin):
         #calculate the sun's Azimuth angle
         curr_date = timin//24
-        curr_hour = timin%24
-        curr_hour_angle = curr_hour #curr_hour should be in 24-hour decimal format
+        curr_hour = 24*((timin/24)-curr_date)
+        print(timin)
+        print(curr_date)
+        print(curr_hour)
+        curr_hour_angle = curr_hour - 12 #curr_hour should be in 24-hour decimal format
         curr_hour_angle = math.radians(15*curr_hour_angle)
         
 

@@ -12,7 +12,7 @@ class ADC:
     def __init__(self, channel):
         self.rd_chan = channel
 
-        self.mcp = Adafruit_MCP3008.MCP3008(clk = 23, cs = 15, miso = 21, mosi = 19)
+        self.mcp = Adafruit_MCP3008.MCP3008(clk = 11, cs = 22, miso = 9, mosi = 10)
 
     def readVolts(self):
         #get the adc readout

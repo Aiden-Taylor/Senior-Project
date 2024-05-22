@@ -22,7 +22,11 @@ class gyroobj:
         # -- MatLab used to solve it for phi.
         #1/(1/(atan(z/(x^2 + y^2)^(1/2))^2 + atan(y/x)^2))^(1/2)
         try:
-            self.elevation = 90 - math.degrees(1/math.sqrt(1/(pow(math.atan(z/(math.sqrt(pow(x,2) + pow(y,2)))), 2) + pow(math.atan(y/x), 2))))
+            full = math.sqrt(pow(x,2) + pow(y,2) + pow(z,2))
+            #z = math.sqrt(pow(z,2) + pow(y,2))
+            self.elevation = math.acos(x/full)
+            self.elevation = 90 - math.degrees(self.elevation)
+            #self.elevation = 90 - math.degrees(1/math.sqrt(1/(pow(math.atan(z/(math.sqrt(pow(x,2) + pow(y,2)))), 2) + pow(math.atan(y/x), 2))))
         except:
             self.elevation = 0
         return(self.elevation)
