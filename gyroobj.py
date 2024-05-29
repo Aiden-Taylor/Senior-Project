@@ -17,11 +17,12 @@ class gyroobj:
         #THIS ASSUMES THAT THE X AXIS IS ALIGNED WITH THE PANEL PIVOT AXIS
 
         x, y, z = self.accelero.acceleration
-        self.zenith = math.degrees(math.atan(y/x))
+        
         # -- Below formula is from a derivation in Aiden's SP Notebook, with
         # -- MatLab used to solve it for phi.
         #1/(1/(atan(z/(x^2 + y^2)^(1/2))^2 + atan(y/x)^2))^(1/2)
         try:
+            self.zenith = math.degrees(math.atan(y/x))
             full = math.sqrt(pow(x,2) + pow(y,2) + pow(z,2))
             #z = math.sqrt(pow(z,2) + pow(y,2))
             self.elevation = math.acos(x/full)
