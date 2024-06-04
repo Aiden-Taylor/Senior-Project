@@ -30,6 +30,7 @@ senscalib = -3
 
 
 #reading latitude for solar calc
+#the latitude is stored as the first line in lat.txt
 latfile = open('/home/aiden/Senior-Project/lat.txt', 'r')
 lat = float(latfile.readline())
 # print(lat)
@@ -37,6 +38,7 @@ lat = float(latfile.readline())
 # lat = 35.1819
 
 #setting the RPi date/time
+#the current time is stored in time.txt. Since the raspberry pi cannot keep time without network, we need to manually set the local time that we started the solar service.
 dat = open('/home/aiden/Senior-Project/time.txt', 'r')
 tim = dat.readline()
 tim = tim[0:19]
@@ -55,9 +57,7 @@ time_zone = -7
 sun = solar.Solar(lat, time_zone)
 
 #getting the northern angle
-# print('Tell me the angle off north (Measuring from the uphill side).')
-# print('Express angles in -180:0:180 domain.')
-# north = int(input('my uphill side should be the side with the red control panel: '))
+#the north angle is stored as the second line in lat.txt
 north = float(latfile.readline())
 latfile.close()
 # print(north)
