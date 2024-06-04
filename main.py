@@ -75,7 +75,7 @@ def computeang(azim):
     # try:
         #theta = math.degrees(math.asin((zetaprime-zeta)/phi))
     zetaprime = azim - north
-    theta = zetaprime - 180
+    theta = .5*(zetaprime - 180)
     if theta > maxang:
         theta = maxang
     elif theta < minang:
